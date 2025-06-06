@@ -1,0 +1,731 @@
+/*especificaciones generales*/
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #160e2c;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  
+}
+
+/*Menu de la parte superior*/
+.menu-inicial {
+  list-style: none;
+  background-color: #ff5757;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 20px;
+}
+
+
+.menu-inicial li a {
+  text-decoration: none;
+  color: white;
+  padding: 20px;
+  
+ display: block;
+}
+
+.menu-inicial li {
+  display: inline-block;
+  text-align: right;
+  padding-inline: 15px;
+  
+}
+
+
+
+/*hola*/
+.menu {
+  list-style: none;
+}
+
+.menu>li {
+  position: relative;
+  display: inline-block;
+}
+
+.menu>li>a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  background-color: #ff5757
+}
+
+
+.menu>li>a:hover {
+  background-color: #ff5757;
+}
+
+/* Submenú desplegable */
+.submenu {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ff5757;
+  list-style: none;
+  padding-left: 0%;
+  margin: 0;
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border-radius: 0 0 1px 1px;
+  color: #fff;
+}
+
+.submenu li {
+  display: block;
+  text-align: left;
+}
+
+.submenu li a {
+  display: block;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+
+/* Mostrar submenu al hacer hover */
+.dropdown:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Mostrar submenu al hacer hover */
+.dropdown {
+  position: relative;
+
+}
+
+.dropdown:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+
+.icono1 {
+  width: 24px;
+  height: auto;
+  
+  transition: transform 0.8s ease;
+}
+
+
+.icono1:hover {
+  transform: scale(1.6);
+}
+
+.icono2 {
+  width: 24px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+/* Solo agrandar al pasar el cursor */
+.icono2:hover {
+  transform: scale(1.6);
+}
+
+
+.icono3 {
+  width: 24px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+/* Solo agrandar al pasar el cursor */
+.icono3:hover {
+  transform: scale(1.6);
+}
+
+
+
+
+
+#home {
+  margin: 100px;
+}
+
+#facebook {
+  margin-left: 80px;
+  height: 40px;
+  width: auto;
+}
+
+#instagram {
+  height: 40px;
+  width: auto;
+}
+
+#twiter {
+  height: 40px;
+  width: auto;
+}
+
+/*Video portada*/
+ video {
+  padding-top: 50px;
+  position: relative;
+  width: 100%;
+  margin-top: 40px;
+
+}
+
+/*Fondo sección de febrero*/
+.contenido-principal {
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 21px;
+  padding-left: 50px;
+  padding-bottom: 50px;
+  margin-inline-start: 30%;
+  margin-inline-end: 30%;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.febfond {
+  position: relative;
+  width: 90%;
+  padding-left: 5%;
+  height: 100vh;
+  background-image: url ("img\febfon.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*Texto sección de febrero*/
+.febtitu {
+  position: absolute;
+  color: white;
+  font-size: 2em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  margin-top: -800px;
+  padding-left: 900px;
+}
+
+.febt {
+  position: absolute;
+  color: #6f0d18;
+  font-size: 2em;
+  text-align: center;
+  margin-top: -700px;
+  font-size: 18px;
+  margin-left: 715px;
+  text-align: justify;
+
+}
+
+.febtex {
+  margin-right: 59%;
+}
+
+.febtexto {
+  margin-right: 13%;
+}
+
+/*Fondo sección de homenajes*/
+
+.homfond {
+  padding-top: 5%;
+    /* Por ejemplo, si quieres que el div recorte la imagen mientras se desliza */
+    overflow: hidden;
+    /* Puedes agregar padding, altura mínima, etc. */
+    min-height: 400px; /* Dale una altura para que se pueda ver el efecto de scroll */
+    display: flex;
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+}
+
+/* ESTOS SON LOS ESTILOS CLAVE PARA LA ANIMACIÓN DESLIZANTE */
+.slide-in-image {
+    opacity: 0; /* Inicialmente invisible */
+    transform: translateX(-100%); /* Desplazada 100% a la izquierda (cambia si quieres otra dirección) */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Transición suave */
+    max-width: 100%; /* Asegura que la imagen sea responsiva dentro de su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Para que margin: auto funcione si la centras */
+    /* margin: 0 auto;  Opcional: Si quieres que la imagen se centre dentro de homfond sin flexbox */
+  
+}
+
+/* Esta clase se agrega con JavaScript cuando la imagen es visible */
+.slide-in-image.visible {
+    opacity: 1; /* Se vuelve visible */
+    transform: translateX(0); /* Se mueve a su posición original */
+}
+
+
+.yum-1 {
+  position: relative;
+  width: 90%;
+  padding-left: 5%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5%;
+}
+
+.yumfondo-2 {
+  position: relative;
+  width: 90%;
+  padding-left: 5%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5%
+}
+
+/*Imagenes deslisantes*/
+
+
+.carrusel-cont {
+  width: 600px;
+  height: 400px;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  /*transition-duration: 1s;*/
+  border-radius: 12px;
+  margin-top: -40%;
+  border-bottom: 30%;
+  margin-left: 50%
+}
+
+.carrusel-mover {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s ease-in-out;
+  animation: slide 36s infinite;
+}
+
+
+
+.carrusel-mover img {
+  width: 600px;
+  height: 400px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+
+@keyframes slide {
+  0%   { transform: translateX(0); }
+  13.8% { transform: translateX(0); }
+ 
+  16.6% { transform: translateX(-600px); }
+  30.4% { transform: translateX(-600px); }
+ 
+  33.3% { transform: translateX(-1200px); }
+  47.1% { transform: translateX(-1200px); }
+ 
+  50% { transform: translateX(-1800px); }
+  63.8% { transform: translateX(-1800px); }
+ 
+  66.6% { transform: translateX(-2400px); }
+  80.4% { transform: translateX(-2400px); }
+ 
+  83.3% { transform: translateX(-3000px); }
+  97.1% { transform: translateX(-3000px); }
+ 
+  100% { transform: translateX(0); }
+}
+
+/* Flechas */
+button.prev,
+button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+  color: #000;
+  border-radius: 20%;
+}
+
+button.prev {
+  left: 15px;
+}
+
+button.next {
+  right: 15px;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+/*Fondo siguiente sección de yumká*/
+
+.yumfon-3 {
+  position: relative;
+  width: 90%;
+  padding-left: 5%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10%;
+}
+
+.jaguar {
+  position: absolute;
+  margin-top: -53%;
+  margin-left: 60%;
+}
+
+
+
+.voli1 {
+  position: relative;
+  width: 90%;
+  padding-left: 5%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5%
+}
+
+.voli2 {
+  position: relative;
+  width: 90%;
+  padding-left: 5%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5%
+}
+
+.estrella {
+  width: 26%;
+  margin-left: 16%;
+  margin-top: -23%;
+
+}
+
+
+.voli3 {
+  position: relative;
+  width: 90%;
+  margin-top: 5%;
+  padding-left: 5%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5%
+}
+
+.voligif2 {
+  position: absolute;
+  margin-top: -10%;
+  margin-left: 80%;
+}
+
+.maestrogift {
+  width: 50%;
+  padding-left: 26%;
+
+}
+
+
+.carousel-container {
+  margin-left: 4%;
+  margin-top: -2%;
+    position: relative;
+
+    width: 90vw; /* Ajusta el ancho del carrusel (ej: 90% del ancho de la ventana) */
+    max-width: 1200px; /* Ancho máximo para pantallas grandes */
+    height: 90%; /* Ajusta la altura del carrusel (ej: 70% de la altura de la ventana) */
+    max-height: 700px;
+    overflow: hidden; /* ¡ESENCIAL! Esto recorta las partes de las imágenes laterales */
+    border-radius: 12px;
+    /* Sombra sutil para el contenedor principal */
+    display: flex; /* Usamos flexbox para centrar el track */
+    align-items: center; /* Centra verticalmente el track dentro del contenedor */
+}
+
+.carousel-track {
+    display: flex; /* Para que las diapositivas se muestren en fila */
+    transition: transform 0.5s ease-in-out; /* Transición suave para el movimiento del carrusel */
+    /* El ancho de este track será ajustado dinámicamente por JavaScript */
+}
+
+.carousel-slide {
+    flex-shrink: 0; /* Evita que las diapositivas se encojan en un contenedor flex */
+    /* --- AJUSTA EL ANCHO DE CADA SLIDE. Debe ser MENOR que el carousel-container --- */
+    width: 60vh; /* El ancho de cada diapositiva individual (60% del ancho de la ventana) */
+    max-width: 800px; /* Max-width para la diapositiva individual */
+    height: 100%; /* Ocupa toda la altura del carousel-container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Recorta el contenido si la imagen es más grande que el slide */
+    /* --- REDUCE EL MARGEN ENTRE SLIDES si quieres que se vean más pegados --- */
+    margin: 0 0.5vw; /* Espacio horizontal (0.5% del ancho de la ventana) entre las diapositivas */
+    border-radius: 10px;
+    box-sizing: border-box; /* Incluye padding y borde en el cálculo del ancho/alto */
+
+    /* ***** EFECTO DE IMAGENES LATERALES MÁS PEQUEÑAS Y TENUES ***** */
+    transform: scale(0.8); /* Reduce la imagen al 80% de su tamaño original para las laterales */
+    opacity: 0.6; /* Hace la imagen 60% opaca (más tenue) */
+
+    /* Sombra para las imágenes que NO son la principal */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+
+    /* Transiciones suaves para todas las propiedades que cambian */
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.carousel-slide.active {
+    /* ***** ESTILOS PARA LA IMAGEN PRINCIPAL (ACTIVA) ***** */
+    transform: scale(1); /* La imagen activa vuelve a su tamaño normal (100%) */
+    opacity: 1; /* Completamente visible */
+    z-index: 2; /* Asegura que la imagen activa esté por encima de las otras */
+
+    /* Sombra más pronunciada para la imagen principal */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
+}
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+/* Estilos para los botones de navegación (flechas) */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px 10px;
+    cursor: pointer;
+    font-size: 2em;
+    border-radius: 5px;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-button.prev {
+    left: 12%;
+}
+
+.carousel-button.next {
+    right: 10%;
+}
+
+
+
+
+/** seccion boton de muy interesante **/
+.infovideo{
+  width: 70%;
+  margin-left:190px ;
+}
+
+
+.boton {
+    position: absolute;
+   
+    left:50%; 
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    height:auto;
+}
+.boton2{
+    width:200px;
+    height:70px;
+    background: linear-gradient(to left top, #ff5757 50%, #f54141 50%);
+    border-style: none;
+    color:#fff;
+    font-size: 23px;
+    letter-spacing: 3px;
+    font-family: 'Lato';
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    padding: 0px;
+    overflow: hidden;
+    transition: all .5s;
+    box-shadow: 0px 1px 2px rgba(0,0,0,.2);
+}
+button span{
+    position: absolute;
+    display: block;
+}
+button span:nth-child(1){
+    height: 3px;
+    width:200px;
+    top:0px;
+    left:-200px;
+    background: linear-gradient(to right, rgba(0,0,0,0), #f6e58d);
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+    animation: span1 2s linear infinite;
+    animation-delay: 1s;
+}
+
+
+@keyframes span1{
+    0%{
+        left:-200px
+    }
+    100%{
+        left:200px;
+    }
+  }
+
+
+button span:nth-child(2){
+    height: 70px;
+    width: 3px;
+    top:-70px;
+    right:0px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), #f6e58d);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 10px;
+    animation: span2 2s linear infinite;
+    animation-delay: 2s;
+}
+
+@keyframes span2{
+    0%{
+        top:-70px;
+    }
+    100%{
+        top:70px;
+    }
+}
+button span:nth-child(3){
+    height:3px;
+    width:200px;
+    right:-200px;
+    bottom: 0px;
+    background: linear-gradient(to left, rgba(0,0,0,0), #f6e58d);
+    border-top-left-radius: 1px;
+    border-bottom-left-radius: 1px;
+    animation: span3 2s linear infinite;
+    animation-delay: 3s;
+}
+
+
+@keyframes span3{
+    0%{
+        right:-200px;
+    }
+    100%{
+        right: 200px;
+    }
+}
+
+button span:nth-child(4){
+    height:70px;
+    width:3px;
+     bottom:-70px;  
+    
+    left:0px;
+    background: linear-gradient(to top, rgba(0,0,0,0), #f6e58d);
+    border-top-right-radius: 1px;
+    border-top-left-radius: 1px;
+    animation: span4 2s linear infinite;
+    animation-delay: 4s;
+}
+
+
+@keyframes span4{
+    0%{
+        bottom: -70px;
+    }
+    100%{
+        bottom:70px;
+    }
+} 
+
+button:hover{
+    transition: all .5s;
+    transform: rotate(-3deg) scale(1.1);
+    box-shadow: 0px 3px 5px rgba(0,0,0,.4);
+}
+button:hover span{
+    animation-play-state: paused;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+  background-color: #ff5757;
+  width: 100%;
+  height: 15%;
+  margin-top: 5%;
+}
+
+.footer-content {
+  margin-top: 3%;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
